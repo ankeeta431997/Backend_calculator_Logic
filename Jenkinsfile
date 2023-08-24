@@ -4,13 +4,6 @@ pipeline {
 	maven 'Maven'
 	}
     stages {  
-            stage ('Git-Checkout') {  
-                steps{
-					checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/ankeeta431997/Backend_calculator_Logic.git']]])
-                    
-                    echo "Checkout successful";
-                } 
-            }
             stage ('Compile') {  
                   steps{
                     bat label: '', script: 'mvn compile'
