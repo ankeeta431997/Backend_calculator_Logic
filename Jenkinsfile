@@ -41,7 +41,7 @@ pipeline {
 	 post {
         always {
             script {
-                def projectName = 'React_JS Calculator'
+               def projectName = JOB_NAME.tokenize('/').last()
                 def buildNumber = currentBuild.number
                 def buildStatus = currentBuild.result ?: 'UNKNOWN'
 
